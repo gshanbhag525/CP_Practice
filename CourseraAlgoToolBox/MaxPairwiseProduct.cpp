@@ -2,22 +2,22 @@
 #include <vector>
 using namespace ::std;
 
-// long long MaxPairwiseProduct(const vector<long long> &numbers)
-// {
-//     long long result = 0;
-//     int n = numbers.size();
-//     for (int i = 0; i < n; i++)
-//     {
-//         for (int j = i + 1; j < n; j++)
-//         {
-//             if (((long long)numbers[i]) * numbers[j] > result)
-//             {
-//                 result = numbers[i] * numbers[j];
-//             }
-//         }
-//     }
-//     return result;
-// }
+long long MaxPairwiseProduct(const vector<long long> &numbers)
+{
+    long long result = 0;
+    int n = numbers.size();
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (((long long)numbers[i]) * numbers[j] > result)
+            {
+                result = numbers[i] * numbers[j];
+            }
+        }
+    }
+    return result;
+}
 
 long long MaxPairwiseProductFast(const vector<long long> &numbers)
 {
@@ -30,7 +30,7 @@ long long MaxPairwiseProductFast(const vector<long long> &numbers)
 
     int max_index2 = -1;
     for (int j = 0; j < n; ++j)
-        if ((numbers[j] != numbers[max_index1]) && ((max_index2 == -1) || (numbers[j] > numbers[max_index2])))
+        if ((j != max_index1) && ((max_index2 == -1) || (numbers[j] > numbers[max_index2])))
             max_index2 = j;
 
     return ((long long)(numbers[max_index1])) * numbers[max_index2];
