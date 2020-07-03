@@ -2,9 +2,9 @@
 using namespace std;
 int main()
 {
-    int a, b, c;
-    cin >> a >> b >> c;
-    if (a + b == c || (a + b) * 2 == c)
+    int row, col, treenum;
+    cin >> row >> col >> treenum;
+    if (row + col == treenum || (row + col) * 2 == treenum)
         cout << "It is a mango tree";
     else
         cout << "It is not a mango tree";
