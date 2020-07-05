@@ -1,20 +1,79 @@
-#include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
-int main()
+
+// function to print the following pyramid pattern
+
+void printPattern(int n)
+
 {
-    int rows;
-    cin >> rows;
-    for (int i = 1; i <= rows; i++)
+
+    int j, k = 0;
+
+    // loop to decide the row number
+
+    for (int i = 1; i <= n; i++)
+
     {
-        for (int j = 1; j <= i; j++)
+
+        // if row number is odd
+
+        if (i % 2 != 0)
+
         {
-            cout << j;
+
+            // print numbers with the '*' sign in
+
+            // increasing order
+
+            for (j = k + 1; j < k + i; j++)
+
+                cout << j << "*";
+
+            cout << j++ << endl;
+
+            // update value of 'k'
+
+            k = j;
         }
-        cout << endl;
+
+        // if row number is even
+
+        else
+
+        {
+
+            // update value of 'k'
+
+            k = k + i - 1;
+
+            // print numbers with the '*' in
+
+            // decreasing order
+
+            for (j = k; j > k - i + 1; j--)
+
+                cout << j << "*";
+
+            cout << j << endl;
+        }
     }
-    return 0;
 }
 
+// Driver program to test above
+
+int main()
+
+{
+
+    int n;
+
+    std::cin >> n;
+
+    printPattern(n);
+
+    return 0;
+}
 
 /*n
 Pattern II
