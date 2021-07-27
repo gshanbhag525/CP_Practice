@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 bool iskaprekar(int n)
-{
+{ 
     if (n == 1)
         return true;
     int sq_n = n * n;
